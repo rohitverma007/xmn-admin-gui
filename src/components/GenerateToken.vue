@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Balance: {{xmnBalance}} XMN</h3>
+    <balance></balance>
     <p>Exchange XMN Token:</p>
     <div class="row">
       <div class="row col-6 mx-auto">
@@ -48,20 +48,26 @@
 
 <script>
 import { rpc } from "./mixins/rpc"
-
+import Balance from './shared/Balance'
 export default {
   mixins: [rpc],
+  components: {
+    Balance
+  },
   data () {
     return {
       xmnAmount: 0,
       repAmount: 0,
-      xmnBalance: 0,
       selectedToken: null,
       tokenReps: [],
       tokenRepOptions: []
     }
   },
   methods: {
+    handleRpcError: function(error){
+      // show it on view possibly
+      console.log(error.message)
+    },
     updateRepAmount: function(){
       this.repAmount = this.xmnAmount*this.selectedTokenRate();
     },
@@ -83,9 +89,10 @@ export default {
     }
   },
   created: function(){
-    this.xmnBalance = this.getUserBalance();
-    this.tokenReps = this.getRepresentations();
-    this.generateTokenRepOptions()
+    this.getRepresentations().then((result) => {
+      this.tokenReps = result;
+      this.generateTokenRepOptions()
+    }, this.handleRpcError);
   }
 }
 </script>
