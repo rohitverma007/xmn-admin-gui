@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import GenerateToken from '@/components/GenerateToken'
-import WithdrawToken from '@/components/WithdrawToken'
+import Wallet from '@/components/Wallet'
 import Dashboard from '@/components/dashboard'
 
 Vue.use(Router)
@@ -21,9 +21,9 @@ export default new Router({
       component: GenerateToken
     },
     {
-      path: '/withdrawToken',
-      name: 'WithdrawToken',
-      component: WithdrawToken
+      path: '/wallet',
+      name: 'Wallet',
+      component: Wallet
     },
     {
       path: '/dashboard',

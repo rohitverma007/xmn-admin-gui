@@ -22,8 +22,8 @@
           <template slot="button-content">
             <em>User</em>
           </template>
-          <b-dropdown-item to="/generateToken">Generate Token</b-dropdown-item>
-          <b-dropdown-item to="/withdrawToken">Withdraw Token</b-dropdown-item>
+          <b-dropdown-item to="generateToken">Generate Token</b-dropdown-item>
+          <b-dropdown-item to="wallet">Wallet</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
 
