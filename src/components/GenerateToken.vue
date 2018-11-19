@@ -1,6 +1,6 @@
 <template>
   <div>
-    <balance></balance>
+    <balance show-balance-token="XMN"></balance>
     <p>Exchange XMN Token:</p>
     <div class="row">
       <div class="row col-6 mx-auto">

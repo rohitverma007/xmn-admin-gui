@@ -34,6 +34,9 @@ export const rpc = {
     getRepresentations: function(){
       return this.jrpc.call('getRepresentations');
     },
+    getWithdrawalHistory: function(){
+      return this.jrpc.call('getWithdrawalHistory');
+    },
     verifyApp: function(){
 
     },
