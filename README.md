@@ -5,6 +5,10 @@
 ## Build Setup
 
 ``` bash
+
+# run mock server for rpc calls 
+node mock-server.js 
+
 # install dependencies
 npm install
 
