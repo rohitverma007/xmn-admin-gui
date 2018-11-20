@@ -42,17 +42,23 @@
       <div class="col-6 mx-auto">
         <b-button variant="primary">Convert</b-button>
       </div>
-    </div>  
+    </div>
+    <div class="row mt-3">
+      <token-generation-history></token-generation-history>
+    </div>
   </div>
 </template>
 
 <script>
 import { rpc } from "./mixins/rpc"
 import Balance from './shared/Balance'
+import TokenGenerationHistory from './shared/TokenGenerationHistory'
+
 export default {
   mixins: [rpc],
   components: {
-    Balance
+    Balance,
+    TokenGenerationHistory
   },
   data () {
     return {

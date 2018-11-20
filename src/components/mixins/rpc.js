@@ -37,6 +37,9 @@ export const rpc = {
     getWithdrawalHistory: function(){
       return this.jrpc.call('getWithdrawalHistory');
     },
+    getGenerationHistory: function(){
+      return this.jrpc.call('getGenerationHistory');
+    },
     verifyApp: function(){
 
     },

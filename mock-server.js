@@ -44,6 +44,43 @@ function getRepresentations(){
     ]
 }
 
+function getGenerationHistory(){
+    return [
+        {
+            "symbol": "XMN",
+            "total_amount": 100,
+            "created_at": new Date("March 22, 2018"),
+            "rep": "GOLD",
+            "repAmount": 0.1,
+            "status": "Completed"
+        },
+        {
+            "symbol": "XMN",
+            "total_amount": 500,
+            "created_at": new Date("May 22, 2018"),
+            "rep": "DMND",
+            "repAmount": 0.05,
+            "status": "Pending"
+        },
+        {
+            "symbol": "XMN",
+            "total_amount": 50,
+            "created_at": new Date("April 22, 2018"),
+            "rep": "HAY",
+            "repAmount": 0.1,
+            "status": "Completed"
+        },
+        {
+            "symbol": "XMN",
+            "total_amount": 100,
+            "created_at": new Date("March 1, 2018"),
+            "rep": "XMN",
+            "repAmount": 90,
+            "status": "Completed"
+        },
+    ]
+}
+
 function getWithdrawalHistory(){
     return [
         {
@@ -100,6 +137,7 @@ http.createServer(function(request, response){
         jrpc.dispatch('getUserBalance', getUserBalance);
         jrpc.dispatch('getRepresentations', getRepresentations);
         jrpc.dispatch('getWithdrawalHistory', getWithdrawalHistory);
+        jrpc.dispatch('getGenerationHistory', getGenerationHistory);
 
         jrpc.toStream = function(_msg){
             response.writeHead(200, {"Content-Type": "application/json"});
